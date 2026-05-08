@@ -42,8 +42,8 @@
 
 | Language | File | Description |
 |-----------|-------|-------------|
-| 🇬🇧 English | [README.en.md](README.en.md) | Full English documentation |
-| 🇪🇸 Español | [README.es.md](README.es.md) | Documentación completa en español |
+| 🇬🇧 English | [README.en.md](./docs/README.en.md) | Full English documentation |
+| 🇪🇸 Español | [README.es.md](./docs/README.es.md) | Documentación completa en español |
 
 <!--==Features===========================================================================================-->
 
