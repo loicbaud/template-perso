@@ -1,0 +1,28 @@
+% !TeX root = main.tex
+\documentclass[a4paper,12pt]{article}
+
+\input{config/packages}
+\input{config/settings}
+
+\addbibresource{bibliography/ref.bib}  % Bibiography files
+
+
+\title{}
+\author{}
+
+\begin{document}
+
+\include{title_pages/example_title_page}
+
+% Tabla de contenidos
+\tableofcontents
+\clearpage
+
+% sections
+\include{sections/section_1}
+\include{sections/section_2}
+\include{sections/section_3}
+
+\printbibliography[title={Reference},heading=bibintoc]
+
+\end{document}
