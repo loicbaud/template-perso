@@ -1,5 +1,5 @@
 % Language and encoding
-\usepackage[english]{babel}
+\usepackage[french]{babel}
 \usepackage[utf8]{inputenc}              % Input encoding (UTF-8)
 \usepackage[T1]{fontenc}                 % Output encoding
 
@@ -40,3 +40,12 @@
 
 % Floating element positioning
 \usepackage{float}
+
+% Date en haut de page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Loïc Baud}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
