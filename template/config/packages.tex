@@ -46,6 +46,11 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{Loïc Baud}
-\fancyhead[R]{\today}
+\fancyhead[R]{
+    \parbox{\headwidth}
+        \raggedleft
+        \today\hspace{0.3cm}
+        \includegraphics[height=0.5cm]{logos HEIG/HEIG_Rouge_Simple.jpg}
+    }
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
