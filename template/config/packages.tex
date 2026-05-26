@@ -41,11 +41,13 @@
 % Floating element positioning
 \usepackage{float}
 
-% Date en haut de page
+% Entete et pied de page
+\usepackage{titling}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{Loïc Baud}
+\fancyhead[L]{\theauthor}
+\fancyhead[C]{\thetitle}
 \fancyhead[R]{
     \parbox{\headwidth}
         \raggedleft
