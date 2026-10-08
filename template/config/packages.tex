@@ -13,12 +13,14 @@
 % Graphics and images
 \usepackage{graphicx}
 \usepackage{caption}
-\usepackage{float}
+\usepackage{subcaption}     
 \graphicspath{{./images/}}               % Path for images
 \usepackage{pgfplots}                    % Graphics
 
 % Mathematics
-\usepackage{amsmath, amssymb, amsthm}            
+\usepackage{amsmath, amssymb, amsthm}  
+\usepackage{siunitx}
+\sisetup{locale = FR}          
 
 % Document formatting
 \usepackage{parskip}                     % Space between paragraphs
@@ -58,3 +60,15 @@
     }
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black,
+    filecolor=black
+}
+\usepackage{tabularx}
+\usepackage{array}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
