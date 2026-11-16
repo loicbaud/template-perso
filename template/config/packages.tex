@@ -1,66 +1,72 @@
-% Language and encoding
-\usepackage[french]{babel}
-\usepackage[utf8]{inputenc}              % Input encoding (UTF-8)
-\usepackage[T1]{fontenc}                 % Output encoding
+%==============================================================
+% packages.tex
+%==============================================================
 
-\usepackage{setspace}
-\usepackage{tikz}
-\usetikzlibrary{positioning} 
+%--------------------------------------------------------------
+% Langue et encodage
+%--------------------------------------------------------------
+\usepackage[T1]{fontenc}                 % Encodage de sortie
+\usepackage[utf8]{inputenc}              % Encodage d'entrée (UTF-8)
+\usepackage[french]{babel}               % Langue
+\usepackage{csquotes}                    % Guillemets (recommandé avec babel/biblatex)
 
-% Bibliography with Biber
-\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}     
+%--------------------------------------------------------------
+% Mise en page
+%--------------------------------------------------------------
+\usepackage[a4paper,margin=1in]{geometry}   % Marges
+\usepackage{parskip}                     % Espace entre paragraphes
+\usepackage{setspace}                    % Interligne
+\usepackage{float}                       % Positionnement [H] des flottants
+\usepackage{titling}                     % Accès à \thetitle, \theauthor...
+\emergencystretch=3cm                    % Évite les débordements de ligne
 
-% Graphics and images
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{subcaption}     
-\graphicspath{{./images/}}               % Path for images
-\usepackage{pgfplots}                    % Graphics
+%--------------------------------------------------------------
+% Couleurs
+%--------------------------------------------------------------
+\usepackage[dvipsnames]{xcolor}
 
-% Mathematics
-\usepackage{amsmath, amssymb, amsthm}  
+%--------------------------------------------------------------
+% Mathématiques et unités
+%--------------------------------------------------------------
+\usepackage{amsmath, amssymb, amsthm}
 \usepackage{siunitx}
-\sisetup{locale = FR}          
+\sisetup{locale=FR}
 
-% Document formatting
-\usepackage{parskip}                     % Space between paragraphs
-\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=3cm,marginparwidth=1.75cm]{geometry}
-\geometry{margin=1in}
+%--------------------------------------------------------------
+% Images, figures et graphiques
+%--------------------------------------------------------------
+\usepackage{graphicx}
+\graphicspath{{./images/}}               % Dossier des images
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
 
-% Lists and enumerations
-\usepackage{enumitem}                    % Customize lists
-\usepackage{listings}                    % Source code
+%--------------------------------------------------------------
+% Listes, tableaux et code source
+%--------------------------------------------------------------
+\usepackage{enumitem}                    % Personnalisation des listes
+\usepackage{listings}                    % Code source
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\newcolumntype{C}{>{\centering\arraybackslash}X}   % Colonne X centrée
 
-% Hyperlinks and colors
-\usepackage[dvipsnames]{xcolor}          
-\usepackage[colorlinks=true,allcolors=blue]{hyperref}  % Links in the document
+%--------------------------------------------------------------
+% Bibliographie (Biber) et index
+%--------------------------------------------------------------
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
 
-% Citations and quotes
-\usepackage{csquotes}
+\usepackage{imakeidx}
+\makeindex[columns=3, title=Index alphabétique]
 
-% Alphabetical index
-\usepackage{imakeidx}                   
-\makeindex[columns=3, title=Alphabetical Index]
-
-% Floating element positioning
-\usepackage{float}
-
-% Entete et pied de page
-\usepackage{titling}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\theauthor}
-\fancyhead[C]{\thetitle}
-\fancyhead[R]{
-    \parbox{\headwidth}
-        \raggedleft
-        \today\hspace{0.3cm}
-        \includegraphics[height=0.5cm]{logos HEIG/HEIG_Rouge_Simple.jpg}
-    }
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-
+%--------------------------------------------------------------
+% Hyperliens et URL
+% (hyperref se charge en dernier ou presque)
+%--------------------------------------------------------------
+\usepackage{xurl}                        % Coupure des URL longues
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -69,6 +75,22 @@
     urlcolor=black,
     filecolor=black
 }
-\usepackage{tabularx}
-\usepackage{array}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+
+%--------------------------------------------------------------
+% En-tête et pied de page
+%--------------------------------------------------------------
+\usepackage{fancyhdr}
+\setlength{\headheight}{18.6pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\theauthor}
+\fancyhead[C]{\thetitle}
+\fancyhead[R]{%
+    \today\hspace{0.3cm}%
+    \includegraphics[height=0.5cm]{logos HEIG/HEIG_Rouge_Simple.jpg}%
+}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}

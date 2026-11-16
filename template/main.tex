@@ -4,7 +4,7 @@
 \input{config/packages}
 \input{config/settings}
 
-\addbibresource{bibliography/ref.bib}  % Bibiography files
+\addbibresource{bibliography/ref.bib}
 
 
 \title{Titre du travail}
@@ -19,9 +19,22 @@
 
 % sections
 \include{sections/introduction}
+\include{sections/modelisation}
 \include{sections/resultats}
-\include{sections/conclusion}
 
-\printbibliography[title={Reference},heading=bibintoc]
+\newpage
+\input{sections/conclusion}
+\vfill
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+    Signature de l'auteur :\\[0.1cm]
+    \includegraphics[height=2.5cm]{images/Signature/Signature.png}\\[0.1cm]
+    \rule{6cm}{0.4pt}\\
+    \theauthor
+\end{minipage}
+\newpage
+
+
+\printbibliography[title={Références},heading=bibintoc]
 
 \end{document}
