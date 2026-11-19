@@ -18,7 +18,7 @@
 \usepackage{setspace}                    % Interligne
 \usepackage{float}                       % Positionnement [H] des flottants
 \usepackage{titling}                     % Accès à \thetitle, \theauthor...
-\emergencystretch=3cm                    % Évite les débordements de ligne
+\emergencystretch=3em                    % Évite les débordements de ligne
 
 %--------------------------------------------------------------
 % Couleurs
@@ -30,7 +30,10 @@
 %--------------------------------------------------------------
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{siunitx}
-\sisetup{locale=FR}
+\sisetup{
+    locale=FR,
+    per-mode=symbol
+}
 
 %--------------------------------------------------------------
 % Images, figures et graphiques
@@ -55,18 +58,33 @@
 \newcolumntype{C}{>{\centering\arraybackslash}X}   % Colonne X centrée
 
 %--------------------------------------------------------------
+% URL (à charger AVANT biblatex et hyperref)
+%--------------------------------------------------------------
+\usepackage{xurl}                        % Coupure des URL longues
+
+%--------------------------------------------------------------
 % Bibliographie (Biber) et index
 %--------------------------------------------------------------
 \usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+
+% Coupure des URL dans la bibliographie
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+
+% Bibliographie alignée à gauche (évite les gros espaces)
+\renewcommand*{\bibfont}{\raggedright}
+
+% Supprime l'espace avant ":" dans https :// (babel français)
+\DeclareFieldFormat{url}{\url{#1}}
+\urlstyle{same}
 
 \usepackage{imakeidx}
 \makeindex[columns=3, title=Index alphabétique]
 
 %--------------------------------------------------------------
-% Hyperliens et URL
-% (hyperref se charge en dernier ou presque)
+% Hyperliens (se charge en dernier ou presque)
 %--------------------------------------------------------------
-\usepackage{xurl}                        % Coupure des URL longues
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -75,9 +93,6 @@
     urlcolor=black,
     filecolor=black
 }
-\setcounter{biburlnumpenalty}{100}
-\setcounter{biburlucpenalty}{100}
-\setcounter{biburllcpenalty}{100}
 
 %--------------------------------------------------------------
 % En-tête et pied de page
